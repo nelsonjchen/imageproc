@@ -23,6 +23,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      # Add addtiional wasm32 target for nightly
       - uses: actions-rs/toolchain@v1
         name: Install Nightly Toolchain
         if: ${{ matrix.rust == 'nightly' }}
