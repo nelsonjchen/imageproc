@@ -41,6 +41,10 @@ jobs:
           toolchain: ${{ matrix.rust }}
           override: true                
 
+      - run: brew install sdl2
+        name: Install SDL2 on macOS        
+        if: ${{ matrix.os == 'macOS-latest' }}        
+
       - uses: actions-rs/cargo@v1
         name: Build
         with:
