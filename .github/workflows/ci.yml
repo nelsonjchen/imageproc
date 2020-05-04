@@ -41,6 +41,10 @@ jobs:
           toolchain: ${{ matrix.rust }}
           override: true                
 
+      - run: sudo apt install -y libsdl2-dev libsdl2-image-dev
+        name: Install SDL2 on Ubuntu        
+        if: ${{ matrix.os == 'ubuntu-latest' }}        
+
       - run: brew install sdl2
         name: Install SDL2 on macOS        
         if: ${{ matrix.os == 'macOS-latest' }}        
