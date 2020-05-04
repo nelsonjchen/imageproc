@@ -54,12 +54,6 @@ jobs:
           command: install
           args: wasm-bindgen-cli --vers "0.2.62"
 
-      - uses: actions-rs/cargo@v1
-        name: Build
-        with:
-          command: build
-          args: --features=${{ matrix.features }}
-
       # Tests only run on Nightly due to #![feature(*)] use 
       - uses: actions-rs/cargo@v1
 
