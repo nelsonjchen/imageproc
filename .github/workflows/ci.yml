@@ -62,6 +62,8 @@ jobs:
           command: test
           args: --features=${{ matrix.features }} -v --target wasm32-unknown-unknown
 
+  # While there is no conditional platform docs in this project, the right way to check and build docs for a platform is to build on the target platform
+  # https://github.com/rust-lang/rust/issues/1998
   docbuild:
     name: Doc Build Test
     runs-on: ${{ matrix.os }}
